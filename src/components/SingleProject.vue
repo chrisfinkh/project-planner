@@ -46,11 +46,11 @@ const toggleComplete = () => {
 .project {
   width: 500px;
   margin: 20px auto;
-  background: white;
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.05);
   border-left: 4px solid #e90074;
+  background: rgb(227, 227, 227);
 }
 
 h3 {
@@ -81,5 +81,11 @@ h3 {
 
 .project.complete .tick {
   color: #00ce89;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project {
+    background: rgb(47, 47, 47);
+  }
 }
 </style>

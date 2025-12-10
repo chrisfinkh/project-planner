@@ -1,34 +1,34 @@
 {
-    "projects": [
-        {
-            "id": 1,
-            "title": "Create new homepage banner",
-            "details": "Design an eye-catching banner for the homepage featuring our new product launch. Must be responsive and include a call-to-action button.",
-            "complete": false
-        },
-        {
-            "id": 2,
-            "title": "Make marketing email",
-            "details": "Create a promotional email campaign for Q4 sales. Include personalized greetings, product highlights, and discount codes.",
-            "complete": true
-        },
-        {
-            "id": 3,
-            "title": "Design mobile app prototype",
-            "details": "Build interactive mockups for the iOS and Android app. Focus on user onboarding flow and main dashboard features.",
-            "complete": false
-        },
-        {
-            "id": 4,
-            "title": "Update user documentation",
-            "details": "Revise the API documentation to reflect recent v2.0 changes. Add code examples and troubleshooting guides.",
-            "complete": false
-        },
-        {
-            "id": 5,
-            "title": "Fix navigation menu bug",
-            "details": "Resolve the dropdown menu issue on mobile devices where submenus are not displaying correctly on iOS Safari.",
-            "complete": true
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "title": "Create new homepage banner",
+      "details": "Design an eye-catching banner for the homepage featuring our new product launch. Must be responsive and include a call-to-action button.",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Make marketing email",
+      "details": "Create a promotional email campaign for Q4 sales. Include personalized greetings, product highlights, and discount codes.",
+      "complete": true
+    },
+    {
+      "id": 3,
+      "title": "Design mobile app prototype",
+      "details": "Build interactive mockups for the iOS and Android app. Focus on user onboarding flow and main dashboard features.",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "Update user documentation",
+      "details": "Revise the API documentation to reflect recent v2.0 changes. Add code examples and troubleshooting guides.",
+      "complete": false
+    },
+    {
+      "id": 5,
+      "title": "Fix navigation menu bug",
+      "details": "Resolve the dropdown menu issue on mobile devices where submenus are not displaying correctly on iOS Safari.",
+      "complete": true
+    }
+  ]
 }

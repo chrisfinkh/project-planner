@@ -16,7 +16,7 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },

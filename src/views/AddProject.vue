@@ -78,6 +78,8 @@ form button {
   input,
   textarea {
     background-color: rgb(32, 32, 32);
+    color: rgb(198, 198, 198);
+    border-color: rgb(136, 136, 136);
   }
 }
 </style>

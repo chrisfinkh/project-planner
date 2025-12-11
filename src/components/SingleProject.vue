@@ -3,7 +3,9 @@
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
       <div class="icons">
-        <span class="material-symbols-outlined">edit</span>
+        <RouterLink :to="{ name: 'EditProject', params: {id: project.id} }">
+          <span class="material-symbols-outlined">edit</span>
+        </RouterLink>
         <span class="material-symbols-outlined" @click="deleteProject">delete</span>
         <span class="material-symbols-outlined tick" @click="toggleComplete">check</span>
       </div>
@@ -53,12 +55,12 @@ const toggleComplete = () => {
   background: rgb(227, 227, 227);
 }
 
-h3 {
-  cursor: pointer;
+.details {
+  text-align: start;
 }
 
-.detailsHidden {
-  display: none;
+h3 {
+  cursor: pointer;
 }
 
 .actions {
@@ -88,4 +90,11 @@ h3 {
     background: rgb(47, 47, 47);
   }
 }
+.actions .icons a {
+  color: rgb(143, 143, 143);
+}
+.actions .icons a:hover {
+  background-color: transparent;
+}
+
 </style>

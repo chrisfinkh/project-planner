@@ -10,7 +10,7 @@
       "id": 2,
       "title": "Make marketing email",
       "details": "Create a promotional email campaign for Q4 sales. Include personalized greetings, product highlights, and discount codes.",
-      "complete": true
+      "complete": false
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "id": 4,
       "title": "Update user documentation",
       "details": "Revise the API documentation to reflect recent v2.0 changes. Add code examples and troubleshooting guides.",
-      "complete": false
+      "complete": true
     },
     {
       "id": 5,

@@ -15,13 +15,13 @@ const handleFilterChange = (filter: string) => {
 }
 
 const filteredProjects = computed(() => {
-    switch (filterCriteria.value) {
-    case "completed":
-      return projects.value.filter(project => project.complete)
-    case "ongoing":
-      return projects.value.filter(project => !project.complete)
+  switch (filterCriteria.value) {
+    case 'completed':
+      return projects.value.filter((project) => project.complete)
+    case 'ongoing':
+      return projects.value.filter((project) => !project.complete)
     default:
-      return projects.value;
+      return projects.value
   }
 })
 
@@ -51,7 +51,7 @@ onMounted(() => {
 <template>
   <main>
     <h1>Projects</h1>
-    <FilterNav @filterChanged="handleFilterChange" :current="filterCriteria"/>
+    <FilterNav @filterChanged="handleFilterChange" :current="filterCriteria" />
 
     <div v-if="filteredProjects.length">
       <SingleProject

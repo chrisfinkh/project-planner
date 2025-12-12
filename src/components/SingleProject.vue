@@ -3,7 +3,7 @@
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
       <div class="icons">
-        <RouterLink :to="{ name: 'EditProject', params: {id: project.id} }">
+        <RouterLink :to="{ name: 'EditProject', params: { id: project.id } }">
           <span class="material-symbols-outlined">edit</span>
         </RouterLink>
         <span class="material-symbols-outlined" @click="deleteProject">delete</span>
@@ -96,5 +96,4 @@ h3 {
 .actions .icons a:hover {
   background-color: transparent;
 }
-
 </style>

@@ -20,8 +20,8 @@ const router = createRouter({
       path: '/project/:id',
       name: 'EditProject',
       component: EditProject,
-      props: true
-    }
+      props: true,
+    },
   ],
 })
 

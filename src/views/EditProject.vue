@@ -1,5 +1,5 @@
 <template>
-<h1>Edit project</h1>
+  <h1>Edit project</h1>
   <form @submit.prevent="handleSubmit">
     <label>Title:</label>
     <input type="text" required v-model="title" />
@@ -12,7 +12,7 @@
 import router from '@/router'
 import { onMounted, ref } from 'vue'
 
-const props = defineProps(['id']);
+const props = defineProps(['id'])
 
 const uri = 'http://localhost:3000/projects/' + props.id
 const title = ref<string>('')
@@ -38,11 +38,11 @@ const handleSubmit = () => {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(project),
-  }).then(() => {
-    router.push('/')
-  }).catch( err => console.log(err))
+  })
+    .then(() => {
+      router.push('/')
+    })
+    .catch((err) => console.log(err))
 }
 </script>
-<style>
-
-</style>
+<style></style>

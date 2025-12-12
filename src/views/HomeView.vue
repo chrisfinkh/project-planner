@@ -3,9 +3,16 @@ import SingleProject from '@/components/SingleProject.vue'
 import { computed, onMounted, ref } from 'vue'
 import type { Project } from '@/types/Project'
 import FilterNav from '@/components/FilterNav.vue'
+import { useUrlSearchParams } from '@vueuse/core'
+
+const params = useUrlSearchParams('history')
 
 const projects = ref<Project[]>([])
-const filterCriteria = ref("all")
+const filterCriteria = computed(() => (params.filter as string) || 'all')
+
+const handleFilterChange = (filter: string) => {
+  params.filter = filter
+}
 
 const filteredProjects = computed(() => {
     switch (filterCriteria.value) {
@@ -44,7 +51,7 @@ onMounted(() => {
 <template>
   <main>
     <h1>Projects</h1>
-    <FilterNav @filterChanged="filterCriteria = $event" :current="filterCriteria"/>
+    <FilterNav @filterChanged="handleFilterChange" :current="filterCriteria"/>
 
     <div v-if="filteredProjects.length">
       <SingleProject

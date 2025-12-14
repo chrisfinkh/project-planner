@@ -1,24 +1,38 @@
 <script setup lang="ts">
 import SingleProject from '@/components/SingleProject.vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import type { Project } from '@/types/Project'
 import FilterNav from '@/components/FilterNav.vue'
 import { useUrlSearchParams } from '@vueuse/core'
+import { Filter, isValidFilter } from '@/types/Filter'
+import { useRouter } from 'vue-router'
 
 const params = useUrlSearchParams('history')
+const router = useRouter()
 
 const projects = ref<Project[]>([])
-const filterCriteria = computed(() => (params.filter as string) || 'all')
+const filterCriteria = computed(() => {
+  const filter = params.filter as string
+  if (!filter) return Filter.All
+  return isValidFilter(filter) ? filter : null
+})
 
-const handleFilterChange = (filter: string) => {
+// Redirect to 404 if invalid filter
+watch(filterCriteria, (value) => {
+  if (value === null) {
+    router.replace({ name: 'NotFound' })
+  }
+}, { immediate: true })
+
+const handleFilterChange = (filter: Filter) => {
   params.filter = filter
 }
 
 const filteredProjects = computed(() => {
   switch (filterCriteria.value) {
-    case 'completed':
+    case Filter.Completed:
       return projects.value.filter((project) => project.complete)
-    case 'ongoing':
+    case Filter.Ongoing:
       return projects.value.filter((project) => !project.complete)
     default:
       return projects.value
@@ -49,7 +63,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main>
+  <main v-if="filterCriteria">
     <h1>Projects</h1>
     <FilterNav @filterChanged="handleFilterChange" :current="filterCriteria" />
 

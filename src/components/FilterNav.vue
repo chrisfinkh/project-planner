@@ -1,21 +1,28 @@
 <template>
   <nav class="filter-nav">
-    <button @click="updateFilter('completed')" :class="{ active: props.current === 'completed' }">
-      completed
+    <button
+      v-for="filter in Filter"
+      :key="filter"
+      @click="updateFilter(filter)"
+      :class="{ active: props.current === filter }"
+    >
+      {{ filter }}
     </button>
-    <button @click="updateFilter('ongoing')" :class="{ active: props.current === 'ongoing' }">
-      ongoing
-    </button>
-    <button @click="updateFilter('all')" :class="{ active: props.current === 'all' }">all</button>
   </nav>
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits(['filterChanged'])
-const props = defineProps(['current'])
-const updateFilter = (criteria: string) => {
-  emit('filterChanged', criteria)
-  console.log(criteria)
+import { Filter } from '@/types/Filter'
+
+const emit = defineEmits<{
+  filterChanged: [filter: Filter]
+}>()
+const props = defineProps<{
+  current: Filter
+}>()
+
+const updateFilter = (filter: Filter) => {
+  emit('filterChanged', filter)
 }
 </script>
 

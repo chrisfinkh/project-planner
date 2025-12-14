@@ -1,4 +1,5 @@
-# ninja-vue-project-planner
+# vue-project-planner
+
 
 This template should help get you started developing with Vue 3 in Vite.
 
